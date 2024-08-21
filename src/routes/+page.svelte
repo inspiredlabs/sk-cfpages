@@ -22,15 +22,11 @@
 
     socket.addEventListener('message', (event) => {
       const data = JSON.parse(event.data);
+      
+      // Ensure $activeIndex does not exceed the amount of `deckTotal`
+      activeIndexStore.set((data.activeIndex + deckTotal) % deckTotal);
 
-      // Expects a different type that's throttled
-      if (data.type === 'updateActiveIndex') {
-        // Ensure $activeIndex does not exceed the amount of `deckTotal`
-        activeIndexStore.set((data.activeIndex + deckTotal) % deckTotal);
-      }
-      if (data.type === 'updateParticipants') {
-        participants.set(data.participants);
-      }
+      participants.set(data.participants);
     });
 
     return () => {
@@ -51,28 +47,18 @@
     };
   }
 
-  // Debounced send function
-  const debouncedSend = debounce((index) => {
-    socket.send(JSON.stringify({ 
-      type: 'updateActiveIndex',
-      activeIndex: index
-    }));
+  // Throttled send function
+  const debouncedSend = debounce((type) => {
+    socket.send(JSON.stringify({ type }));
   }, 300); // Delay in milliseconds
+  // from: perplexity.ai/search/i-have-a-svelte-component-that-bCES3wyuQgKSbI704Bintw
 
   function increment() {
-    activeIndexStore.update(n => {
-      const newIndex = (n + 1) % deckTotal;
-      debouncedSend(newIndex); // Send the new index after debounce delay
-      return newIndex;
-    });
+    debouncedSend('incrementActiveIndex');
   }
 
   function decrement() {
-    activeIndexStore.update(n => {
-      const newIndex = (n - 1 + deckTotal) % deckTotal;
-      debouncedSend(newIndex); // Send the new index after debounce delay
-      return newIndex;
-    });
+    debouncedSend('decrementActiveIndex');
   }
 
 
