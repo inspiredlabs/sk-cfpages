@@ -1,0 +1,170 @@
+[
+  {
+    "title": "",
+    "src": "",
+    "caption": "Thanks for having me &amp; a special thank you to Joe &amp; Maurice at FH, Scott & the Svelte Soc Admins",
+    "links": []
+  },
+  {
+    "title": "",
+    "src": "./images/mangroves.webp",
+    "caption": "Svelte has a lot of boundary areas, similar to these overlaps found in nature. The web's building-blocks HTML, CSS &amp; Scripts are profoundly evolving.",
+    "links": [],
+    "support": "Verges in nature are areas with the richest biodiversity and creature species. The Philipines' mangrove forest, is probably the most interesting ecotone."
+  },
+  {
+    "title": "",
+    "src": "",
+    "caption": "Hello. I'm Scott, a UX'er that makes prototypes. I think Svelte is an awesome part of the web-ecosystem and it's the perfect place to fuse technologies.",
+    "links": [
+      {
+        "title":"Inspired Labs",
+        "url":"https://inspiredlabs.co.uk/"
+      },
+      {
+        "title":"Github",
+        "url":"https://github.com/inspiredlabs"
+      },
+      {
+        "title":"Codepen.io",
+        "url":"https://codepen.io/inspiredlabs"
+      }
+    ]
+  },
+  {
+    "title": "",
+    "src": "./images/ux-persona.webp",
+    "caption": "",
+    "links": []
+  },
+  {
+    "title": "",
+    "src": "./images/importance-of-ux.webp",
+    "caption": "",
+    "links": []
+  },
+  {
+    "title": "",
+    "src": "./images/double-diamond.webp",
+    "caption": "The Double Diamond",
+    "links": [
+      {
+        "title":"UK Design Council",
+        "url":"https://www.designcouncil.org.uk/our-resources/the-double-diamond/"
+      }
+    ],
+    "support": " helps Avoid \"The Dip!\""
+  },
+  {
+    "title": "Universal colour scheme",
+    "src": "./images/colour-scheme.webp",
+    "caption": "A colour-blind friendly scheme, 2016",
+    "links": [
+      {
+        "title":"Sustainability Centre website",
+        "url":"https://umbria.netlify.app/"
+      }
+    ]
+  },  
+  {
+    "title": "",
+    "src": "./images/villard-layout-01.webp",
+    "caption": "Villard's Cannon",
+    "links": []
+  },
+  {
+    "title": "",
+    "src": "./images/villard-layout-02.webp",
+    "caption": "Secret cannon in the wild",
+    "links": []
+  },
+  {
+    "title": "",
+    "src": "./images/print-css.webp",
+    "caption": "",
+    "links": [
+      {
+        "title":"Show me the code!",
+        "url":"https://tasteofthe.me/"
+      }
+    ],
+    "support": "TasteOfThe.Me: ~/GitHub/tasteofthe.me/src/routes/(print)/print/+layout.svelte"
+  },
+  {
+    "title": "",
+    "src": "./images/preparation.webp",
+    "caption": "",
+    "links": []
+  },
+  {
+    "title": "",
+    "src": "./images/svelte-is-fine.webp",
+    "caption": "",
+    "links": [],
+    "support": "/images/meme-scale.webp"
+  },
+  {
+    "title": "",
+    "src": "./images/pills-meme.gif",
+    "caption": "",
+    "links": [
+      {
+        "title":"Svelte REPL",
+        "url":"https://svelte.dev/repl/acc2822ea03d4b2da5f56116bcb03b30?version=4.2.18"
+      }
+    ],
+    "support": "original: https://github.com/inspiredlabs/static/blob/master/src/lib/Gallery.svelte you can see the original here: https://codepen.io/inspiredlabs/pen/YzvNvwN?editors=1000"
+  },
+  {
+    "title": "",
+    "src": "./images/repl-components.gif",
+    "caption": "",
+    "links": [
+      {
+        "title":"Typical number of components",
+        "url":"https://svelte.dev/repl/f1427576076042d2adf47f365c45cd13?version=4.2.18"
+      }
+    ]
+  },
+  {
+    "title": "",
+    "src": "./images/vercel-kv.webp",
+    "caption": "",
+    "links": [
+      {
+        "title":"Real-Time &amp; pseudo Real-Time",
+        "url":"https://pindeck.me"
+      }
+    ],
+    "support": "4 examples."
+  },
+  {
+    "title": "",
+    "src": "./images/sveltekit-ai.gif",
+    "caption": "",
+    "links": [
+      {
+        "title":"Medixplore.app",
+        "url":"https://medixplore.app/istanbulkentuniversity"
+      }
+    ]
+  },
+  {
+    "title": "",
+    "src": "./images/ai-landscape.webp",
+    "caption": "",
+    "links": []
+  },
+  {
+    "title": "",
+    "src": "./images/emoji.webp",
+    "caption": "",
+    "links": []
+  },
+  {
+    "title": "",
+    "src": "./images/svelte-is-fine.webp",
+    "caption": "",
+    "links": []
+  }
+]
