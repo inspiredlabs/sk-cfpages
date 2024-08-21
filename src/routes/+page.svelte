@@ -10,7 +10,7 @@
   let socket: PartySocket;
   
   // local dev ONLY
-  import { PUBLIC_PARTYKIT_HOST } from '$env/static/public'
+  import { PUBLIC_PARTYKIT_HOST, PUBLIC_PIN  } from '$env/static/public'
 
   onMount(() => {
 
@@ -34,48 +34,44 @@
     };
   });
 
+  // Throttle `Requests` to limit updates to Cloudflare
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // Throttled send function
+  const debouncedSend = debounce((type) => {
+    socket.send(JSON.stringify({ type }));
+  }, 300); // Delay in milliseconds
+
   function increment() {
-    socket.send(JSON.stringify({
-      type: 'incrementActiveIndex'
-    }));
+    debouncedSend('incrementActiveIndex');
   }
 
   function decrement() {
-    socket.send(JSON.stringify({
-      type: 'decrementActiveIndex'
-    }));
+    debouncedSend('decrementActiveIndex');
   }
 
-
-
-
-// Throttle function to limit updates
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
 
 
 
 let value: number | undefined = undefined;
-// This is exposed to the client
-// move it to the .env
-let pin = 4236; 
+// Expose to the client
+let pin: number = Number(PUBLIC_PIN); 
 let pinVisibility = false;
-
-// Reactive statement to update `lastValue` when `activeIndexStore` changes
-$: lastValue = $activeIndexStore;
 
 // Get the total number of entries
 const deckTotal = deck.length;
 
+// Control pin visibility
 import Radiocheck from '$lib/Radiocheck.svelte';
 let checked = false;
 let checkboxId = 'pinvis';
@@ -85,6 +81,7 @@ function handleChange(event) {
   pinVisibility = event.target.checked;
 }
   
+// Import components
 import Container from '$lib/Container.svelte';
 import Logo from '$lib/Logo.svelte';
 import deck from '$lib/deck.json';

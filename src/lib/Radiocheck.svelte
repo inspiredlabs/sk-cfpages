@@ -8,7 +8,13 @@
 when label is highlighted automatically tab into the text entry field -->
 
 <label for="pinvis" class="flex items-center relative no-clutter pointer">
-  <input class="visually-hidden" type="checkbox" id={id} bind:checked on:change />
+  <input
+    class="visually-hidden"
+    type="checkbox"
+    id={id}
+    bind:checked
+    on:change
+  />
   <svg
     class="checkbox-animation h2 w2 z-1 absolute pa0 ml0"
     viewBox="0 0 512 512"
@@ -18,8 +24,9 @@ when label is highlighted automatically tab into the text entry field -->
   <div class="flex items-center w-100">				
     <aside class="h2 w2 b--silver ba bw1-ns br-100 pa0 bg-transparent">
     </aside>
-    <div class="width: calc(100% - 2rem)">
-      <span class="code">&nbsp;{ checked ? 'hide' : 'show' }</span>
+    <div class="code">
+      <!-- style="width: calc(100% - 2rem)" -->
+      <span >&nbsp;{ checked ? 'hide' : 'show' }</span>
       <span class="dn dn-ns dn-m dib-l">pin</span>
     </div>
   </div>
