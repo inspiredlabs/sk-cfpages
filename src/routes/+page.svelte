@@ -47,17 +47,28 @@
     };
   }
 
+
+  let index = 0;
   // Throttled send function
   const debouncedSend = debounce((type) => {
-    socket.send(JSON.stringify({ type }));
+    socket.send(JSON.stringify({ type: 'updateActiveIndex', activeIndex: index }));
   }, 300); // Delay in milliseconds
+  // from: perplexity.ai/search/i-have-a-svelte-component-that-bCES3wyuQgKSbI704Bintw
 
   function increment() {
-    debouncedSend('incrementActiveIndex');
+    activeIndexStore.update(n => {
+      const newIndex = (n + 1) % deckTotal;
+      debouncedSend(newIndex); // Send the new index after debounce delay
+      return newIndex;
+    });
   }
 
   function decrement() {
-    debouncedSend('decrementActiveIndex');
+    activeIndexStore.update(n => {
+      const newIndex = (n - 1 + deckTotal) % deckTotal;
+      debouncedSend(newIndex); // Send the new index after debounce delay
+      return newIndex;
+    });
   }
 
 
